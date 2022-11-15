@@ -525,7 +525,11 @@ footer{
         margin-top: 20px;
     }
 }
-
+@media(max-width: 380px) {
+    .logo img{
+        width: 120px;
+    }
+}
 .navbar-active{
     /* display: block; */
     right: 0;

@@ -394,6 +394,11 @@ footer{
         margin-top: 20px;
     }
 }
+@media(max-width: 380px) {
+    .logo img{
+        width: 120px;
+    }
+}
 @media(max-width: 730px){
     .intro-part{
         flex-direction: column;
@@ -433,6 +438,7 @@ footer{
     margin-left: 0;
     }
 }
+
 .navbar-active{
     right: 0;
 }
