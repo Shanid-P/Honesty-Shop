@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HONESTY SHOP | E COMMERCE WEBSITE</title>
+	<link rel="stylesheet" href=".\about.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/897db7c282.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="header" id="homepage">
+	<div class="center-nav">
+		<div class="navbar">
+			<div class="logo">
+				<a href=".\index.html#homepage"> 
+				<img src=".\logo.png" width="200px"> 
+				</a>	
+			</div>
+
+			<nav>
+				<div class="nav">
+					<ul id="NavBar">
+						<li><a href="index.html#homepage">Home</a></li>
+						<li><a href="index.html#product1">Products</a></li>
+						<li><a class="active" href="./about.html">About</a></li>
+					</ul>
+				</div>
+				<span class="cart-place"><a  class="cart-icon" href=".\cart.html"><i  style="font-size: 20px;" class="fa-solid fa-cart-shopping"></i></a><sup class="num-item"></sup></span>
+				<span class="theme-icon"><a class="theme-toggle"><i  style="font-size: 20px;" class="theme-converter fa-solid fa-sun"></i></a></span>
+				<span class="hamburger-icon"><a class="menu-toggle"><i  style="font-size: 20px;" class="fa-solid fa-bars"></i></a></span>
+			</nav>
+		</div>
+	</div>
+</section>
+<!-- navbar ends -->
+
+<!--about-us page-->
+<div class="container">
+	<div class="intro-part">
+		<div class="intro-img">
+			<img src="princimain.jpg" alt="">
+		</div>
+		<div class="intro-texts">
+			<h1>Honesty Shop - At a glance</h1>
+			<div class="quote-part">
+				<p class="quote">"The great aim of education is not knowledge but action."</p>
+				<span>-Herbert Spencer</span>
+			</div>
+			<div class="content">
+				<p><span width="10px"></span>Though students are often told to think deeply about course content and skills, 
+				sometimes it feels like they never progress beyond surface-level understanding.
+				One of the best ways to help them get to deeper learning is to have them use what
+				they have learned in a new way. With this aim in mind,the Plus Two students of 
+				NAMHSS Peringathur with the guidance of the faculty of The Department of Commerce 
+				and Management have conceived and materialized a new and unique e-shopping venture 
+				with the brand name Honesty Shop.It has now been all set to cater for the maximum 
+				conceivable needs of the targeted customers. It also aims at inculcating in the students
+				community the 21st-century online marketing business skills which encompass entrepreneurship, 
+				communication, marketing, web designing, content creation, online transactions,data analysis 
+				and much more.<b> It was officially inaugurated by our principal Dr. NA Muhammad Rafeeque on 3 Aug 2022.</b>
+				</p>
+				<!-- <span>Keep browsing for more details</span> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="gallery">
+		<div class="inner-gallery">
+
+			<div class="image right-b">
+				<img class="right-b" src="choclate.jpg" alt="">
+			</div>
+
+			<div class="image left-b">
+				<img class="left-b" src="library.jpg" alt="">
+			</div>
+
+			<div class="image right-b">
+				<img class="right-b" src="first-sale.jpg" alt="">
+			</div>
+
+			<div class="image left-b">
+				<img class="left-b" src="mammali.jpg" alt="">
+			</div>
+
+			<div class="image right-b">
+				<img class="right-b" src="muneersir.jpg" alt="">
+			</div>
+
+			<div class="image left-b">
+				<img class="left-b" src="stage.jpg" alt="">
+			</div>
+
+			<div class="image right-b">
+				<img class="right-b" src="students.jpg" alt="">
+			</div>
+
+			<div class="image left-b">
+				<img class="left-b" src="me.jpg" alt="">
+			</div>
+
+			<div class="image right-b">
+				<img class="right-b" src="ayisha.jpg" alt="">
+			</div>
+
+		</div>
+	</div>
+</div>
+ 	   
+<!-- ----footer------ -->
+<div class="footer">
+	<footer>
+		<div class="footer-up">
+			<div class="partition">
+			<div class="col-logo">
+				<img src="logo.png" alt="">
+				<span>shanid22392239@gmail.com</span>
+			</div>
+			<div class="quick-links">
+				<span>Quick Links</span>
+				<a href="index.html#homepage" class="quicklink">Home</a>
+				<a href="index.html#product1" class="quicklink">Products</a>
+				<a href="cart.html" class="quicklink">Cart</a>
+				<a href="about.html" class="quicklink">About</a>
+			</div>
+			</div>
+			<div class="partition">
+			<div class="support">
+				<span>Support</span>
+				<a>Frequently Asked Questions</a>
+				<a>Terms & Conditions</a>
+				<a>Privacy Policy</a>
+				<a>Report a Payment Issue</a>
+			</div>
+			<div class="developers">
+				<span>Developers</span>
+				<a>Shanid P</a>
+				<a>Fadil Keepara</a>
+				<a>Shafeen</a>
+				<a>Muhammed VK</a>
+				<a>Ihjas Salim</a>
+				<a>Sahad K</a>
+			</div>
+			</div>
+		</div>
+		<div class="footer-down">
+			<span>Copyright ©2022 All rights reserved | NAMHSS Peringathur</span>
+		</div>
+	</footer>
+</div>
+
+<script>
+	let navBar = document.querySelector(".nav");
+	document.querySelector('.menu-toggle').onclick = () =>{
+    	navBar.classList.toggle('navbar-active');
+	}
+	window.onscroll = () =>{
+		navBar.classList.remove('navbar-active');
+	}
+
+</script>
+<script src=".\script.js"></script>
+<script src="darkMode.js"></script>
+</body>
+</html>
