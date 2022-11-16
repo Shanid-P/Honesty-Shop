@@ -401,6 +401,11 @@ footer{
         margin-top: 20px;
     }
 }
+@media(max-width: 380px) {
+    .logo img{
+        width: 120px;
+    }
+}
 @media(max-width: 1130px){
     .single-product{
         width: 80%;
