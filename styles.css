@@ -439,10 +439,17 @@ footer{
     color: #000;
 }
 .quick-links a:hover,
-.support a:hover
+.support a:hover,
+.developers a:hover
 {
     color: #fa4753;
     cursor: pointer;
+}
+.developers i{
+    font-size: 25px;
+    /* display: inline-block; */
+    margin-right: 5px;
+    transform: translateY(3px);
 }
 .footer-down{
     /* background: yellow; */

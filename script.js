@@ -32,21 +32,18 @@ function buy(){
 				<label class="addressi-l" for="address">Address</label>
 				<textarea class="addressi-i" type="text" name="Address" id="" placeholder="Your Address" required></textarea>
 				</div>
-				<div class="email-ipart">
-				<label class="emaili-l" for="email">Email</label>
-				<input class="emaili-i" type="text" name="Email" id="" placeholder="Your Address" required>
-				</div>
 				<div class="orders-part" style="display:none">
 				<label class="address-l" for="address">Orders</label>
 				<textarea class="address-i" id="" placeholder="" value="" name="Products">${orderedProductsList}</textarea>
 				</div>
-				<input type="submit" class="btn submit-btn" value="Submit">
+				<input type="submit" class="submit-btn" value="Submit">
 				
 			</div>
           `;
 		  	
 			swal({
-				content: form
+				content: form,
+				buttons: false
           })
 			const scriptURL = 'https://script.google.com/macros/s/AKfycbx6NY96Zx2DbWTtEtA16TimFbuVclXbtj5ZLgskAGQu4iAcCxaBmvJp7-u__1bsBAxt/exec'
 		
