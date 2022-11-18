@@ -71,59 +71,6 @@ function buy(){
 				.then(() => {  window.location.reload(); })
 				.catch(error => console.error('Error!', error.message))
 			})
-		//   .then((createInv) => {
-		// 	if(createInv){
-		// 		let nameI = document.querySelector('.namei-i').value;
-		// 		let addressI = document.querySelector('.addressi-i').value;
-		// 		let emailI = document.querySelector('.emaili-i').value;
-		// 		if(nameI == "" || addressI == "" || emailI == ""){
-		// 			// console.log("not")
-		// 			alert("Complete the form...")
-		// 			return false
-		// 		}
-		// 		else{
-		// 			console.log("deleted")
-		// 		// let tbody = document.querySelector(".tbody");
-		// 		// tbody.textContent ='';
-		// 		// grandFinal.textContent ='';
-
-		// 		// titleArr.splice(0,titleArr.length);
-		// 		// quantityArr.splice(0,quantityArr.length);
-		// 		// priceArr.splice(0,priceArr.length);
-		// 		// imgArr.splice(0,imgArr.length);
-
-		// 		// let addingText = document.querySelector(".adding-text");
-		// 		// addingText.style.cssText = "display: block;"
-		// 		// setLocalStorage();
-		// 		}
-		// 	}else{
-		// 		return;
-		// 	}
-        //     //console.log(val);
-        //   });
-
-		//-------------------------
-	// swal({
-	// 	title: "Done!",
-	// 	text: "Your order is placed!",
-	// 	icon: "success",
-	// 	button: "Ok!",
-	//   });
-	// let tbody = document.querySelector(".tbody");
-	// tbody.textContent ='';
-	// grandFinal.textContent ='';
-
-	// titleArr.splice(0,titleArr.length);
-	// quantityArr.splice(0,quantityArr.length);
-	// priceArr.splice(0,priceArr.length);
-	// imgArr.splice(0,imgArr.length);
-
-	// let addingText = document.querySelector(".adding-text");
-	// addingText.style.cssText = "display: block;"
-
-	// cartNumber();
-
-	// setLocalStorage();
 	
 }
 
