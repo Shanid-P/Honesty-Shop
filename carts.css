@@ -352,7 +352,13 @@ footer{
 .name-ipart,
 .address-ipart,
 .email-ipart{
-    margin-top: 15px;
+    margin-top: 5px;
+}
+.addressi-i{
+    width: 100%;
+    height: 80px;
+    resize: none;
+    font-size: 16px;
 }
 .popup-input-div label{
     display: block;

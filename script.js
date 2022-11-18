@@ -9,7 +9,8 @@ let grandFinal;
 // function for buy now button
 function buy(){
 		
-	var form = document.createElement("form");
+	let form = document.createElement("form");
+    form.setAttribute("action", "");
 	let orderedProductsList = "";
 	for (let i = 0; i < titleArr.length; i++) {
 		let eachItemName = titleArr[i];
@@ -19,69 +20,90 @@ function buy(){
 	
 	form.classList.add("popup-box")
 	console.log(orderedProductsList);
-  form.innerHTML = `
+  	form.innerHTML = `
 			
 			<div class="popup-input-div">
 				<h2 class="p-h">Enter your details</h2>
 				<div class="name-ipart">
 				<label class="namei-l" for="name">Name</label>
-				<input class="namei-i" type="text" name="name" id="" placeholder="Your Name" required>
+				<input class="namei-i" type="text" name="Name" id="" placeholder="Your Name" required>
 				</div>
 				<div class="address-ipart">
 				<label class="addressi-l" for="address">Address</label>
-				<input class="addressi-i" type="text" name="address" id="" placeholder="Your Address" required>
+				<textarea class="addressi-i" type="text" name="Address" id="" placeholder="Your Address" required></textarea>
 				</div>
 				<div class="email-ipart">
-				<label class="emaili-l" for="address">Address</label>
-				<input class="emaili-i" type="text" name="address" id="" placeholder="Your Address" required>
+				<label class="emaili-l" for="email">Email</label>
+				<input class="emaili-i" type="text" name="Email" id="" placeholder="Your Address" required>
 				</div>
 				<div class="orders-part" style="display:none">
 				<label class="address-l" for="address">Orders</label>
-				<input class="address-i" id="" placeholder="" value="${orderedProductsList}" required>
+				<textarea class="address-i" id="" placeholder="" value="" name="Products">${orderedProductsList}</textarea>
 				</div>
+				<input type="submit" class="btn submit-btn" value="Submit">
 				
 			</div>
           `;
 		  	
 			swal({
-				content: form,
-				buttons: {
-				cancel: "Cancel",
-				catch: {
-					text: "Create",
-				},
-				}
+				content: form
           })
-		  .then((createInv) => {
-			if(createInv){
-				let nameI = document.querySelector('.namei-i').value;
-				let addressI = document.querySelector('.addressi-i').value;
-				let emailI = document.querySelector('.emaili-i').value;
-				if(nameI == "" || addressI == "" || emailI == ""){
-					console.log("not")
-					alert("Complete the form...")
-					return false
-				}
-				else{
-					console.log("deleted")
-				// let tbody = document.querySelector(".tbody");
-				// tbody.textContent ='';
-				// grandFinal.textContent ='';
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbx6NY96Zx2DbWTtEtA16TimFbuVclXbtj5ZLgskAGQu4iAcCxaBmvJp7-u__1bsBAxt/exec'
+		
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => swal({
+						title: "Done!",
+						text: "Your order is placed!",
+						icon: "success",
+						button: "Ok!",
+					  }))
+					  let tbody = document.querySelector(".tbody");
+						tbody.textContent ='';
+						grandFinal.textContent ='';
 
-				// titleArr.splice(0,titleArr.length);
-				// quantityArr.splice(0,quantityArr.length);
-				// priceArr.splice(0,priceArr.length);
-				// imgArr.splice(0,imgArr.length);
+						titleArr.splice(0,titleArr.length);
+						quantityArr.splice(0,quantityArr.length);
+						priceArr.splice(0,priceArr.length);
+						imgArr.splice(0,imgArr.length);
 
-				// let addingText = document.querySelector(".adding-text");
-				// addingText.style.cssText = "display: block;"
-				// setLocalStorage();
-				}
-			}else{
-				return;
-			}
-            //console.log(val);
-          });
+						let addingText = document.querySelector(".adding-text");
+						addingText.style.cssText = "display: block;"
+						setLocalStorage()
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+		//   .then((createInv) => {
+		// 	if(createInv){
+		// 		let nameI = document.querySelector('.namei-i').value;
+		// 		let addressI = document.querySelector('.addressi-i').value;
+		// 		let emailI = document.querySelector('.emaili-i').value;
+		// 		if(nameI == "" || addressI == "" || emailI == ""){
+		// 			// console.log("not")
+		// 			alert("Complete the form...")
+		// 			return false
+		// 		}
+		// 		else{
+		// 			console.log("deleted")
+		// 		// let tbody = document.querySelector(".tbody");
+		// 		// tbody.textContent ='';
+		// 		// grandFinal.textContent ='';
+
+		// 		// titleArr.splice(0,titleArr.length);
+		// 		// quantityArr.splice(0,quantityArr.length);
+		// 		// priceArr.splice(0,priceArr.length);
+		// 		// imgArr.splice(0,imgArr.length);
+
+		// 		// let addingText = document.querySelector(".adding-text");
+		// 		// addingText.style.cssText = "display: block;"
+		// 		// setLocalStorage();
+		// 		}
+		// 	}else{
+		// 		return;
+		// 	}
+        //     //console.log(val);
+        //   });
 
 		//-------------------------
 	// swal({
