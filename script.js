@@ -9,41 +9,61 @@ let grandFinal;
 // function for buy now button
 function buy(){
 		
-// 	var form = document.createElement("form");
-// 	form.classList.add("popup-box")
-//   form.innerHTML = `
+	var form = document.createElement("form");
+	let orderedProductsList = "";
+	for (let i = 0; i < titleArr.length; i++) {
+		let eachItemName = titleArr[i];
+		let eachItemQuantity = quantityArr[i];
+		orderedProductsList = orderedProductsList + `${eachItemName}*${eachItemQuantity} \n`;
+	}
+	
+	form.classList.add("popup-box")
+	console.log(orderedProductsList);
+  form.innerHTML = `
 			
-// 			<div class="popup-input-div">
-// 				<h2 class="p-h">Enter your details</h2>
-// 				<div class="name-part">
-// 				<label class="name-l" for="name">Name</label>
-// 				<input class="name-i" type="text" name="name" id="" placeholder="Your Name" required>
-// 				</div>
-// 				<div class="address-part">
-// 				<label class="address-l" for="address">Address</label>
-// 				<input class="address-i" type="text" name="address" id="" placeholder="Your Address" required>
-// 				</div>
+			<div class="popup-input-div">
+				<h2 class="p-h">Enter your details</h2>
+				<div class="name-ipart">
+				<label class="namei-l" for="name">Name</label>
+				<input class="namei-i" type="text" name="name" id="" placeholder="Your Name" required>
+				</div>
+				<div class="address-ipart">
+				<label class="addressi-l" for="address">Address</label>
+				<input class="addressi-i" type="text" name="address" id="" placeholder="Your Address" required>
+				</div>
+				<div class="email-ipart">
+				<label class="emaili-l" for="address">Address</label>
+				<input class="emaili-i" type="text" name="address" id="" placeholder="Your Address" required>
+				</div>
+				<div class="orders-part" style="display:none">
+				<label class="address-l" for="address">Orders</label>
+				<input class="address-i" id="" placeholder="" value="${orderedProductsList}" required>
+				</div>
 				
-// 			</div>
-//           `;
+			</div>
+          `;
 		  	
-// 			swal({
-// 				content: form,
-// 				buttons: {
-// 				cancel: "Cancel",
-// 				catch: {
-// 					text: "Create",
-// 				},
-// 				}
-//           }).then((createInv) => {
-// 			if(createInv){
-// 				let nameI = document.querySelector('.name-i').value;
-// 				let addressI = document.querySelector('.address-i').value;
-// 				if(nameI == "" || addressI == ""){
-// 					console.log("not")
-// 					alert("Enter your Name and Address.")
-// 					return false
-// 				}else{
+			swal({
+				content: form,
+				buttons: {
+				cancel: "Cancel",
+				catch: {
+					text: "Create",
+				},
+				}
+          })
+		  .then((createInv) => {
+			if(createInv){
+				let nameI = document.querySelector('.namei-i').value;
+				let addressI = document.querySelector('.addressi-i').value;
+				let emailI = document.querySelector('.emaili-i').value;
+				if(nameI == "" || addressI == "" || emailI == ""){
+					console.log("not")
+					alert("Complete the form...")
+					return false
+				}
+				else{
+					console.log("deleted")
 				// let tbody = document.querySelector(".tbody");
 				// tbody.textContent ='';
 				// grandFinal.textContent ='';
@@ -55,33 +75,36 @@ function buy(){
 
 				// let addingText = document.querySelector(".adding-text");
 				// addingText.style.cssText = "display: block;"
-				// setLocalStorage();}
-		// 	}else{
-		// 		return;
-		// 	}
-        //     //console.log(val);
-        //   });
-	swal({
-		title: "Done!",
-		text: "Your order is placed!",
-		icon: "success",
-		button: "Ok!",
-	  });
-	let tbody = document.querySelector(".tbody");
-	tbody.textContent ='';
-	grandFinal.textContent ='';
+				// setLocalStorage();
+				}
+			}else{
+				return;
+			}
+            //console.log(val);
+          });
 
-	titleArr.splice(0,titleArr.length);
-	quantityArr.splice(0,quantityArr.length);
-	priceArr.splice(0,priceArr.length);
-	imgArr.splice(0,imgArr.length);
+		//-------------------------
+	// swal({
+	// 	title: "Done!",
+	// 	text: "Your order is placed!",
+	// 	icon: "success",
+	// 	button: "Ok!",
+	//   });
+	// let tbody = document.querySelector(".tbody");
+	// tbody.textContent ='';
+	// grandFinal.textContent ='';
 
-	let addingText = document.querySelector(".adding-text");
-	addingText.style.cssText = "display: block;"
+	// titleArr.splice(0,titleArr.length);
+	// quantityArr.splice(0,quantityArr.length);
+	// priceArr.splice(0,priceArr.length);
+	// imgArr.splice(0,imgArr.length);
 
-	cartNumber();
+	// let addingText = document.querySelector(".adding-text");
+	// addingText.style.cssText = "display: block;"
 
-	setLocalStorage();
+	// cartNumber();
+
+	// setLocalStorage();
 	
 }
 
@@ -358,7 +381,6 @@ function cartNumber(){
 }
 buildTotalBar();
 cartNumber();
-
 
 
 

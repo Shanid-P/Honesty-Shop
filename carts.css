@@ -332,6 +332,32 @@ footer{
 }
 
 /* ----------footer section ends--------------- */
+.popup-input-div input{
+    padding: 8px 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid grey;
+    font-size: 16px;
+}
+.popup-input-div{
+    /* background: #0099cc; */
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+.popup-input-div div{
+    /* background: bisque; */
+    width: 70%;
+}
+.name-ipart,
+.address-ipart,
+.email-ipart{
+    margin-top: 15px;
+}
+.popup-input-div label{
+    display: block;
+    text-align: left;
+}
 
 /* ----@ media queries ----------------- */
 @media(max-width: 1260px){
