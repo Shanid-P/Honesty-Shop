@@ -19,7 +19,7 @@ function buy(){
 	}
 	
 	form.classList.add("popup-box")
-	console.log(orderedProductsList);
+	
   	form.innerHTML = `
 			
 			<div class="popup-input-div">
@@ -95,7 +95,7 @@ function removeItem(event){
 			let removePro = event.target;
 
 			let removeParentTR = removePro.parentElement.parentElement;
-			console.log(titleArr)
+			
 			let productname = removeParentTR.querySelector(".cart-product-details").innerHTML;
 		
 			let index = titleArr.indexOf(productname);
@@ -118,25 +118,6 @@ function removeItem(event){
 		  return;
 		}
 	  });
-	// let removePro = event.target;
-
-	// let removeParentTR = removePro.parentElement.parentElement;
-	// console.log(titleArr)
-	// let productname = removeParentTR.querySelector(".cart-product-details").innerHTML;
-
-	// let index = titleArr.indexOf(productname);
-
-	// quantityArr.splice(index,1);
-	// priceArr.splice(index,1);
-	// titleArr.splice(index,1);
-	// imgArr.splice(index,1);
-
-	// setLocalStorage();
-	// removeParentTR.remove();
-	// total();
-	// if(titleArr.length == 0){
-	// 	grandFinal.remove();
-	// }
 }
 function setLocalStorage(event){
 	localStorage.setItem("productName", JSON.stringify(titleArr));
@@ -164,7 +145,6 @@ function total(){
 
 		Tprice = Tprice + totalPrice;
 		
-		console.log(Tprice);
 	}
 	let grandTotal = document.querySelector(".grand-total");
 	grandTotal.innerHTML = Tprice;
@@ -222,7 +202,7 @@ function buildTotalBar(Tprice){
 function buildStructure(){
 
 	titleArr.forEach((items) =>{
-		console.log(items)
+		
 		let index = titleArr.indexOf(items)
 		console.log(quantityArr[index])
 		let tr = document.createElement("tr");
@@ -242,7 +222,6 @@ function buildStructure(){
 		<td><i class="fa-regular fa-trash-can cart-remove" id="table"></i></td> `
 		tbody.appendChild(tr);
 
-		// console.log(tbody)
 	})
 }
 function AddToCart(event){
@@ -269,7 +248,6 @@ function AddToCart(event){
 	titleArr.push(productTitle);
 	imgArr.push(productImg);
 	priceArr.push(productPrice);
-	// console.log(titleArr);
 
 	cartNumber();
 	setLocalStorage();
@@ -288,8 +266,6 @@ function changeQuantity(event){
 	let index = titleArr.indexOf(productHeading);
 	quantityArr.splice(index,1,inputValue)
 
-	// console.log(quantityArr)
-	// console.log(index)
 
 	cartNumber();
 	setLocalStorage();
@@ -317,7 +293,6 @@ function onload(){
 
 	for (var i = 0; i < cartRemove.length; i++) {
 		let removeIcon = cartRemove[i];
-		// console.log(removeIcon)
 		removeIcon.addEventListener("click", removeItem);
 		
 	}
@@ -335,15 +310,12 @@ function cartNumber(){
 		var sum = 0;
 		for (let i = 0; i < quantityArr.length; i++) {
 			sum = sum + JSON.parse(quantityArr[i]);
-			// console.log(sum)
 		}
 		numCart.classList.remove("none");
 		numCart.innerHTML = sum;
-		console.log("0 is not cart no")
 	}
 	else{
 		numCart.classList.add("none");
-		// console.log("0 is cart no")
 	}
 }
 buildTotalBar();
