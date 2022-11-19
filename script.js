@@ -65,10 +65,11 @@ function buy(){
 						priceArr.splice(0,priceArr.length);
 						imgArr.splice(0,imgArr.length);
 
+						cartNumber();
 						let addingText = document.querySelector(".adding-text");
 						addingText.style.cssText = "display: block;"
 						setLocalStorage()
-						cartNumber()
+						
 				.then(() => {  window.location.reload(); })
 				.catch(error => console.error('Error!', error.message))
 			})
