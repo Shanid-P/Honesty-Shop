@@ -68,6 +68,7 @@ function buy(){
 						let addingText = document.querySelector(".adding-text");
 						addingText.style.cssText = "display: block;"
 						setLocalStorage()
+						cartNumber()
 				.then(() => {  window.location.reload(); })
 				.catch(error => console.error('Error!', error.message))
 			})
