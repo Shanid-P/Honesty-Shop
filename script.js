@@ -1,4 +1,4 @@
-// declaring array as variables	
+// declaring array 	
 let titleArr = [];
 let imgArr = [];
 let priceArr = [];
@@ -160,7 +160,7 @@ function total(){
 
 	let discountRatePercent = document.querySelector(".discount-rate");
 	discountRatePercent.innerHTML = `${discountRate}%`;
-	let gT = document.querySelector(".GT");
+	let gT = document.querySelector(".GT-price");
 	gT.innerHTML = parseFloat(Tprice*(100-discountRate)/100).toFixed(2);
 }
 
@@ -182,7 +182,7 @@ function buildTotalBar(Tprice){
 								</tr>
 								<tr>
 									<td class="grand-total-title">Grand Total</td>
-									<td class="GT"></td>
+									<td class="GT"><i class="fa-solid fa-indian-rupee-sign total"></i><b class="GT-price">${Tprice}</b></td>
 								</tr>
 								</table>
 							</div>
