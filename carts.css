@@ -246,6 +246,9 @@ td i{
 .btn2:hover{
 	background: #fa4753;
 }
+.GT-price{
+    margin-left: 3px;
+}
 /* ----------footer section starts--------------- */
 .footer{
     margin-top: 20px;
